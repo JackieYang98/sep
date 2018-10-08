@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\controllers",
+    "\\lib",
+    "\\models",
+    "\\node_modules",
+    "\\public",
+    "\\public\\assets",
+    "\\public\\assets\\scss",
+    "\\routes"
+  ],
+  "SelectedNode": "\\models\\application.js",
+  "PreviewInSolutionExplorer": false
+}
