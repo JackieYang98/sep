@@ -1,5 +1,5 @@
 var app = require("../controllers/application");
-var userAuth = require("../models/authentication")
+var userAuth = require("../routes/authentication")
 
 describe("getQuestions", () => { //TESTING THE TEST
     it("Getting Questions", () => {

@@ -2,7 +2,7 @@
 
 const DATABASE = {
     username: "external",
-    password: "P4ssW0rd$",
+    password: "",
     database: "sep",
     host: "45.63.28.92",
     port: 3306,
