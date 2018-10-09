@@ -3,5 +3,5 @@ os: osx
 before_install:
   - sudo npm cache clean -f
   - sudo npm install -g n
-  - sudo n stable
+  - sudo n 10.11.0
   - npm i --save-dev jasmine
