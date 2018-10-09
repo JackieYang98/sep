@@ -5,7 +5,7 @@ describe("Website", function() {
     var userAuth = require("../routes/authentication");
     var loanApp = require("../routes/application");
     var port = require("../config/index");
-    it("Correct port", () => {
+    it("Correct port", function() {
         var portNum = 4000;
         expect(port.DEV_PORT).toBe(portNum)
     });
