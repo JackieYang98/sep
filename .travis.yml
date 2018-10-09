@@ -1,3 +1,4 @@
 language: node_js
 os: osx
-rvm: jasmine
+before_install:
+  - npm i --save-dev jasmine
