@@ -4,3 +4,4 @@ node_js:
 os: osx
 before_install:
   - npm i --save-dev jasmine
+  - npm install request --save
