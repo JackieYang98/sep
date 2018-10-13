@@ -45,7 +45,7 @@ html(lang='en')
                   li.nav-item.dropdown
                     a.nav-link(href='/profile')
                       span My Profile
-                  if(user && user.role.id < 3)
+                  if(user && user.role.id === 1)
                     li.nav-item.dropdown
                       a.nav-link(href='/users')
                         span Users
