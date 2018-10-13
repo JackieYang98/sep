@@ -14,14 +14,14 @@ beforeAll(() => {
 describe("Website Connectivity", function() {
     var data = {};
     beforeAll((test) => {
-        Request.get("http://localhost:80/", (req, res, next) => {
+        Request.get("http://localhost:8080/", (req, res, next) => {
             data.status = res.statusCode;
             data.next = next;
             test();
         });
     });
     it("Correct port", function() {
-        var portNum = 80;
+        var portNum = 8080;
         expect(port.DEV_PORT).toBe(portNum)
     });
     it("Status 200 - Successful connection", function(){
