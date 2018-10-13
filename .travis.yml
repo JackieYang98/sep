@@ -11,7 +11,7 @@ deploy:
   api_key: 
     secure: ${HERO_TOKEN}
   app: seputsplas
-after_success:
+after_deploy:
   - git config --global user.email "jackie.j.yang@student.uts.edu.au"
   - git config --global user.name "Jackie via Travis"
   - git add .
