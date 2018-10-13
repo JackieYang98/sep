@@ -16,12 +16,20 @@ const login = async (req, res, next) => {
         return next();
     }
 
-    /** Find the user by email */
-    const user = await models.User.findOne({
+    /** Allows use of student id as well */
+    const queryFilter = {
         where: {
-            email: email
+            enabled: 1
         }
-    })
+    };
+    if(email.indexOf('@') === -1) {
+        queryFilter.where['uts_id'] = email; 
+    } else {
+        queryFilter.where['email'] = email; 
+    }
+
+    /** Find the user by email */
+    const user = await models.User.findOne(queryFilter)
     .catch(err => {
         res.locals.err = err;
         return next();
@@ -76,8 +84,6 @@ const login = async (req, res, next) => {
         return next();
     }
 
-    console.log(session);
-
     /** Create the new cookie */
     const sessionOptions = {
         httpOnly: true,
@@ -92,4 +98,10 @@ const login = async (req, res, next) => {
     res.redirect('/');
 }
 
+const logout = (req, res, next) => {
+    res.clearCookie('id');
+    return res.redirect('/authentication/login');
+};
+
 exports.login = login;
+exports.logout = logout;

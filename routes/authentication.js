@@ -15,6 +15,10 @@ router.route('/login')
     .post(
         controllers.authentication.login,
         serve('login')
-    )
+    );
+
+/** Logout */
+router.route('/logout')
+    .get(controllers.authentication.logout);
 
 module.exports = router;

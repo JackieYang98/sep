@@ -6,7 +6,7 @@ block body
             .col-md-12
                 .box
                     .box-header
-                        h2 New Application
+                        h2 Edit Application ##{data.application_id}
                     .box-body#application
                         if(data.application_id)
                             input.form-control(name='application', type='number', hidden='' value=data.application_id)
@@ -16,14 +16,13 @@ block body
                                     label #{question.question}
                                 case question.type_id
                                     when 1
-                                        input.form-control(name=question.id, type='number', required='')
+                                        input.form-control(name=question.id, type='number', required='', value=question.answer)
                                     when 2
-                                        input.form-control(name=question.id, type='text', required='')
+                                        input.form-control(name=question.id, type='text', required='', value=question.answer)
                                 br
                                 
                             button#submit.btn.btn-fw.primary(type='button', style='width: 125px') Submit
                             button#save.btn.btn-fw.success(type='button', style='width: 125px') Save
-
 
 block scripts
     script.
@@ -65,5 +64,6 @@ block scripts
             })
             .then(function() {
                 toastr.success('','Saved');
+
             })
         });

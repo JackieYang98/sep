@@ -16,14 +16,32 @@ router.route('/new')
     )
     .post(
         controllers.application.submit,
-        controllers.application.getQuestions,
-        serve('application')
     )
 
 /** Process */
 router.route('/process')
-    .get(
+    .post(
         controllers.application.process
+    );
+
+router.route('/save')
+    .post(controllers.application.save);
+
+router.route('/delete')
+    .post(controllers.application.delete)
+
+router.route('/view')
+    .get(
+        controllers.application.viewApplication,
+        serve('viewapp')
+    )
+
+router.route('/edit')
+    .get(
+        controllers.application.viewApplication,
+        controllers.application.getQuestions,
+        controllers.application.editApplication,
+        serve('editapp')
     )
 
 module.exports = router;

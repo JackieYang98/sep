@@ -35,6 +35,13 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             }
         })
+
+        models.Question.hasMany(models.Application_Answer, {
+            foreignKey: {
+                name: 'question_id',
+                allowNull: false
+            }
+        })
     };
 
     return Question;
