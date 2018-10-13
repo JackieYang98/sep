@@ -5,3 +5,7 @@ os: osx
 before_install:
   - npm i --save-dev jasmine
   - npm install request --save
+deploy:
+  provider: heroku
+  api_key: 1b6bf78a-d18c-499a-83a9-580ba21c1687
+  app: seputsplas
