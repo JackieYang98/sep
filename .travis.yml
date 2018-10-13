@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "10.11.0"
-os: osx
+os: linux
 before_install:
   - npm i --save-dev jasmine
   - npm install request --save
