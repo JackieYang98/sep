@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
+        uts_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         first_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -30,6 +34,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        enabled: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
+        },
+        credit: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        }
     }, {
         /** No createdAt, updatedAT */
         timestamps: false,
@@ -63,6 +75,13 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: {
                 name: 'user_id',
                 allowNull: false,
+            }
+        });
+
+        models.User.hasMany(models.Loan, {
+            foreignKey: {
+                name: 'user_id',
+                allowNull: false
             }
         });
     };

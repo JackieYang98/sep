@@ -1,0 +1,49 @@
+/** Pulled from Bikash's Fork */
+
+/*.app-header ~ .app-body {
+    padding-top: 6.5rem !important;
+}*/
+
+ul.headerM li a {
+    display: inline-block;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover{
+    background-color: #0cc2aa !important;
+    color: #fff;
+}
+
+.padding.bodyM {
+    margin-top: 65px;
+}
+
+/* Home Page / login page */
+.background-block {
+/*     background-image: url(../logo.png);
+    background-position: 50% 10%;
+    background-repeat: no-repeat; */
+}
+
+a.nav-link.login-logo {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid;
+}
+
+
+/* On screens that are 600px or less, set the background color to olive */
+/*@media screen and (max-width: 767px) {
+    .padding.bodyM {
+        margin-top: 3.5em;
+    }
+    #view .p-a {
+        top: 4em;
+        position: relative;
+    }
+    .app-header {
+
+        height: 100px;
+    }
+}*/

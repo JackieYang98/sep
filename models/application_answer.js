@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        latest: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true,
+        }
     }, {
         /** No createdAt, updatedAT */
         timestamps: false,
@@ -33,6 +37,13 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false,
             }
         });
+
+        models.Application_Answer.belongsTo(models.Question, {
+            foreignKey: {
+                name: 'question_id',
+                allowNull: false
+            }
+        })
     };
 
     return Application_Answer;

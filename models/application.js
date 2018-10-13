@@ -53,6 +53,13 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             }
         })
+
+        models.Application.hasOne(models.Loan, {
+            foreignKey: {
+                name: 'application_id',
+                allowNull: false
+            }
+        })
     };
 
     return Application;
