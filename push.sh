@@ -1,3 +1,4 @@
+#!/bin/sh
 config() {
   git config --global user.email "jackie.j.yang@student.uts.edu.au"
   git config --global user.name "Jackie via Travis"
