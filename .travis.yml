@@ -18,3 +18,4 @@ after_deploy:
   - git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
   - git remote add origin2 https://${GH_TOKEN}@JackieYang98/sep.git
   - git push --quiet --set-upstream origin2
+  - git push origin2 HEAD:master
