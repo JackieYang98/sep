@@ -11,7 +11,3 @@ deploy:
   api_key: 
     secure: ${HERO_TOKEN}
   app: seputsplas
-after_success:
-  - .travis/push.sh
-  on:
-    branch: master
