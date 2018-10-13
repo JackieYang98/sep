@@ -10,7 +10,7 @@ const DATABASE = {
     operatorsAliases: false,
 }
 
-const DEV_PORT = 4000;
+const DEV_PORT = 80;
 
 module.exports = {
     DATABASE: DATABASE,
