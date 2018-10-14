@@ -21,7 +21,7 @@ const EMAIL = {
         "pass": EMAIL_PASSWORD,
     },
     // this is predefined for office365 emails 
-    "host": "smtp.office365.com",
+    "host": "smtp.gmail.com",
     "port": "587",
     "tls": "true",
 };
