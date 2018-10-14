@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "10.11.0"
+  - "8.12.0"
 os: linux
 before_install:
   - npm i --save-dev jasmine
