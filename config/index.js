@@ -1,6 +1,7 @@
 'use strict';
 const DATABASE_PASSWORD = process.env.DATABASE_PASSWORD;
-
+const EMAIL_NAME = process.env.EMAIL_NAME;
+const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
 const DATABASE = {
     username: "external",
     // refer to messenger for password
@@ -15,9 +16,9 @@ const DATABASE = {
 const EMAIL = {
     "auth": {
         // put your email username here 
-        "user": "",
+        "user": EMAIL_NAME,
         // put your email password here
-        "pass": "",
+        "pass": EMAIL_PASSWORD,
     },
     // this is predefined for office365 emails 
     "host": "smtp.office365.com",
