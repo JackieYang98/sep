@@ -226,7 +226,7 @@ const disableApplication = (req, res, next) => {
     const { id } = req.body;
 
     models.Application.update({
-        status: 3
+        status: 4
     }, {
         where: {
             id: id
