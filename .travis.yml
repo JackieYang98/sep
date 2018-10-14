@@ -6,6 +6,7 @@ before_install:
   - npm i --save-dev jasmine
   - npm install request --save
   - npm update
+  - npm rebuild
 deploy:
   provider: heroku
   api_key: 
@@ -14,6 +15,6 @@ deploy:
 after_deploy:
   - git config --global user.email "jackie.j.yang@student.uts.edu.au"
   - git add .
-  - git commit --m "Travis build for Linux"
+  - git commit --m "Travis build for Linux 2"
   - git remote add origin2 https://${GH_TOKEN}@github.com/JackieYang98/sep
   - git push origin2 HEAD:master
