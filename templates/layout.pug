@@ -36,19 +36,25 @@ html(lang='en')
                   li.nav-item.dropdown
                     a.nav-link(href='/')
                       img(src='/logo.png', style='height: 30px')
-                  li.nav-item.dropdown
-                    a.nav-link(href='/application/new')
-                      span New Application
-                  li.nav-item.dropdown
-                    a.nav-link(href='/')
-                      span My Applications
+
+                  if(user && user.role.id === 3)
+                    li.nav-item.dropdown
+                      a.nav-link(href='/application/new')
+                        span New Application
+                    li.nav-item.dropdown
+                      a.nav-link(href='/')
+                        span My Applications
+                        
                   li.nav-item.dropdown
                     a.nav-link(href='/profile')
                       span My Profile
+
                   if(user && user.role.id < 3)
                     li.nav-item.dropdown
                       a.nav-link(href='/users')
                         span Users
+
+                  if(user && user.role.id === 2)
                     li.nav-item.dropdown
                       a.nav-link(href='/loans')
                         span Loans

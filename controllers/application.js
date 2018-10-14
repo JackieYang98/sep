@@ -53,7 +53,8 @@ const submit = async (req, res, next) => {
     })
     .then(values => {
         return models.Application.update({
-            status: 2
+            status: 2,
+            date_submitted: models.sequelize.fn('CURRENT_TIMESTAMP'),
         }, {
             where: {
                 id: application_id,
