@@ -6,7 +6,7 @@ before_install:
   - npm i --save-dev jasmine
   - npm install request --save
   - npm update
-  - npm rebuild bcrypt --update-binary
+  - npm install
 deploy:
   provider: heroku
   api_key: 
