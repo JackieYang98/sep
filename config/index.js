@@ -1,9 +1,9 @@
 'use strict';
-
+const DATABASE_PASSWORD = process.env.DATABASE_PASSWORD;
 const DATABASE = {
     username: "external",
     // refer to messenger for password
-    password: "process.env.DATABASE_PASSWORD",
+    password: DATABASE_PASSWORD,
     database: "sep",
     host: "45.63.28.92",
     port: 3306,
