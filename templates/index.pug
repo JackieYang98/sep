@@ -42,7 +42,7 @@ block body
                       
                         if(user.role.id < 3)
                           td
-                            button#delete.btn.btn-block.success(type='button', style='width: 50%', name=application.id, class=application.status > 3 ? "disabled" : "") 
+                            button#delete.btn.btn-block.success(type='button', style='width: 50%', name=application.id, class=(application.status > 3 || application.status == 1) ? "disabled" : "") 
                               i.fa.fa-check
                         if(user.role.id == 3)
                           td
@@ -50,7 +50,7 @@ block body
                               button.btn.btn-block.primary(class=application.status > 1 ? "disabled" : "", type='button', style='width: 50%') 
                                 i.fa.fa-edit
                         td
-                          button#delete.btn.btn-block.danger(type='button', style='width: 50%', name=application.id, class=application.status > 3 ? "disabled" : "") 
+                          button#delete.btn.btn-block.danger(type='button', style='width: 50%', name=application.id, class=(application.status > 3 || application.status == 1) ? "disabled" : "") 
                             i.fa.fa-times
 
 

@@ -13,12 +13,15 @@ block body
                     table.table.table-striped.b-t.b-b(ui-jp='dataTable')
                         thead
                             tr
-                                th ID
+                                th ID 
                                 th Application ID
                                 th User
                                 th Amount
+                                    span(style="color: red;") ($)
                                 th Length
+                                    span(style="color: red;") (Months)
                                 th Date Started
+                                    span(style="color: red;") (Loan Starts)
                         tbody
                             if(data.loans && data.loans.length) 
                                 each loan in data.loans

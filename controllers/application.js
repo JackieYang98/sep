@@ -117,6 +117,7 @@ const get = (req, res, next) => {
 
 const process = (req, res, next) => {
     const { approve, application_id } = req.body;
+    let bcc;
 
     let data = {};
     let actions = [models.Application.update({
@@ -137,15 +138,28 @@ const process = (req, res, next) => {
         })
     })
     .then(values => {
+        bcc = values.map(role => role.User.email);
+
+        return models.Application.findOne({
+            where: {
+                id: application_id,
+            },
+            include: [
+                models.User
+            ]
+        });
+    })
+    .then(values => {
         const outcome = approve ? 'approved' : 'rejected';
         n({
-            to: req.user.email,
-            bcc: values.map(role => role.User.email),
+            to: values.User.email,
+            bcc: bcc,
             subject: 'Application ' + outcome + '!',
             html: 'Your application #' + application_id + ' has been ' + outcome + '!'
         });
     })];
 
+    /** create loan if approve */
     if(approve) {
         actions.push(models.Question.findAll({
             include: [{
