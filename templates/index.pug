@@ -20,7 +20,7 @@ block body
                   th Date Submitted
                   th Status
                   th View
-                  if(user.role.id == 1 || user.role.id == 2)
+                  if(user.role.id < 3)
                     th Approve
                     th Reject
                   if(user.role.id == 3)
